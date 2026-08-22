@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Building2, Smartphone } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/Button";
@@ -38,19 +38,105 @@ export default function BrandsPage() {
         {/* CAMPAIGN VISUAL */}
         <section className="py-10">
           <div className="container mx-auto px-6 max-w-7xl">
-            <div className="relative w-full aspect-video md:aspect-[21/9] border border-[#E2E8F0] bg-white rounded-2xl shadow-sm overflow-hidden flex items-center justify-center">
-              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVoNDBWNDBIMHptMzkuNSAwVjBINFY0MHoiIGZpbGw9IiNFMkU4RjAiLz48L3N2Zz4=')] opacity-50 z-0" />
-              <div className="absolute inset-0 flex items-center justify-center z-10">
-                <div className="flex gap-4 md:gap-8 items-center">
-                  <div className="w-20 h-20 md:w-32 md:h-32 rounded-full border border-[#CBD5E1] bg-white flex items-center justify-center text-[#64748B] shadow-sm font-medium">BRAND</div>
-                  <div className="h-[1px] w-12 md:w-24 bg-[#CBD5E1]" />
-                  <div className="w-20 h-20 md:w-32 md:h-32 rounded border border-[#3B82F6] bg-white flex items-center justify-center text-[#3B82F6] shadow-sm font-medium">UMAV</div>
-                  <div className="h-[1px] w-12 md:w-24 bg-[#CBD5E1]" />
-                  <div className="flex flex-col gap-2">
-                    <div className="w-16 h-8 md:w-24 md:h-12 border border-[#E2E8F0] bg-white shadow-sm rounded flex items-center justify-center text-xs text-[#475569] font-medium">TIKTOK</div>
-                    <div className="w-16 h-8 md:w-24 md:h-12 border border-[#E2E8F0] bg-white shadow-sm rounded flex items-center justify-center text-xs text-[#475569] font-medium">REELS</div>
-                    <div className="w-16 h-8 md:w-24 md:h-12 border border-[#E2E8F0] bg-white shadow-sm rounded flex items-center justify-center text-xs text-[#475569] font-medium">SHORTS</div>
+            <div className="relative w-full aspect-[4/3] md:aspect-[21/9] border border-[#E2E8F0] bg-white rounded-2xl shadow-sm overflow-hidden flex items-center justify-center">
+              
+              {/* Elegant Dot Pattern Background */}
+              <div 
+                className="absolute inset-0 z-0 opacity-40" 
+                style={{
+                  backgroundImage: "radial-gradient(#CBD5E1 1px, transparent 1px)",
+                  backgroundSize: "24px 24px",
+                  maskImage: "radial-gradient(circle at center, black 50%, transparent 90%)",
+                  WebkitMaskImage: "radial-gradient(circle at center, black 50%, transparent 90%)"
+                }} 
+              />
+              
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-3xl opacity-60 z-0" />
+
+              {/* Animated SVG Lines */}
+              <svg className="absolute inset-0 w-full h-full z-10 pointer-events-none">
+                <defs>
+                  <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#94A3B8" stopOpacity="0.3" />
+                    <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.3" />
+                  </linearGradient>
+                </defs>
+                
+                {/* Desktop Lines */}
+                <motion.path
+                  className="hidden md:block"
+                  d="M 30% 50% L 45% 50%"
+                  fill="none"
+                  stroke="url(#flowGradient)"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                  initial={{ strokeDashoffset: 24 }}
+                  animate={{ strokeDashoffset: 0 }}
+                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                />
+                
+                <motion.path
+                  className="hidden md:block"
+                  d="M 55% 50% C 65% 50%, 65% 35%, 75% 35%"
+                  fill="none"
+                  stroke="url(#flowGradient)"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                  initial={{ strokeDashoffset: 24 }}
+                  animate={{ strokeDashoffset: 0 }}
+                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                />
+                <motion.path
+                  className="hidden md:block"
+                  d="M 55% 50% L 75% 50%"
+                  fill="none"
+                  stroke="url(#flowGradient)"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                  initial={{ strokeDashoffset: 24 }}
+                  animate={{ strokeDashoffset: 0 }}
+                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                />
+                <motion.path
+                  className="hidden md:block"
+                  d="M 55% 50% C 65% 50%, 65% 65%, 75% 65%"
+                  fill="none"
+                  stroke="url(#flowGradient)"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
+                  initial={{ strokeDashoffset: 24 }}
+                  animate={{ strokeDashoffset: 0 }}
+                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                />
+              </svg>
+
+              <div className="absolute inset-0 flex items-center justify-center z-20">
+                <div className="flex flex-col md:flex-row gap-8 md:gap-0 items-center justify-between w-full max-w-4xl px-8 md:px-0">
+                  
+                  {/* Brand Node */}
+                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border border-[#E2E8F0] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] flex flex-col items-center justify-center md:ml-12 relative">
+                    <div className="absolute inset-2 rounded-full border border-gray-50 opacity-50" />
+                    <Building2 className="w-6 h-6 text-[#94A3B8] mb-2" />
+                    <span className="text-xs md:text-sm font-semibold tracking-wider text-[#0F172A]">BRAND</span>
                   </div>
+
+                  {/* UMAV Node */}
+                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl border-2 border-[#3B82F6] bg-white shadow-[0_8px_30px_rgba(59,130,246,0.15)] flex items-center justify-center relative">
+                    <div className="absolute inset-1 rounded-xl border border-blue-50 opacity-50" />
+                    <span className="font-heading text-xl md:text-2xl font-bold tracking-wide text-[#3B82F6]">UMAV</span>
+                  </div>
+
+                  {/* Output Nodes */}
+                  <div className="flex flex-row md:flex-col gap-4 md:mr-12">
+                    {["TIKTOK", "REELS", "SHORTS"].map((platform) => (
+                      <div key={platform} className="flex items-center gap-3 px-4 py-3 bg-white border border-[#E2E8F0] rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] w-[100px] md:w-[140px]">
+                        <Smartphone className="hidden md:block w-4 h-4 text-[#94A3B8]" />
+                        <span className="text-[10px] md:text-xs font-semibold tracking-wider text-[#475569]">{platform}</span>
+                      </div>
+                    ))}
+                  </div>
+
                 </div>
               </div>
             </div>
