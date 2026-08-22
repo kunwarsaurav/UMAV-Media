@@ -82,10 +82,10 @@ export function VideoCard({
 
       {/* Top Header */}
       <div className="absolute inset-x-4 top-4 flex justify-between items-center z-10">
-        <div className={`px-3 py-1 backdrop-blur-md rounded-full text-[10px] font-bold tracking-wider shadow-sm ${bgImage ? 'bg-black/30 border-white/20 text-white' : 'bg-white/60 border-white/50 text-[#0F172A]'}`}>
+        <div className={`px-3 py-1 backdrop-blur-md rounded-full text-[10px] font-bold tracking-wider shadow-sm ${bgImage ? 'bg-white/20 border border-white/40 text-white' : 'bg-white/60 border border-white/50 text-[#0F172A]'}`}>
           {platform.toUpperCase()}
         </div>
-        <MoreHorizontal className={`w-5 h-5 ${bgImage ? 'text-white' : 'text-[#64748B]'}`} />
+        <MoreHorizontal className={`w-5 h-5 drop-shadow-md ${bgImage ? 'text-white' : 'text-[#64748B]'}`} />
       </div>
 
       {/* Center Play Button */}
@@ -93,9 +93,9 @@ export function VideoCard({
         <motion.div 
           animate={{ scale: isHovered ? 1.1 : 1, opacity: isHovered ? 0 : 1 }}
           transition={{ duration: 0.3 }}
-          className={`w-14 h-14 rounded-full backdrop-blur-md flex items-center justify-center shadow-[0_4px_20px_rgba(0,0,0,0.08)] ${bgImage ? 'bg-black/40 border-white/30 text-white' : 'bg-white/80 border-white text-[#0F172A]'}`}
+          className={`w-14 h-14 rounded-full backdrop-blur-md flex items-center justify-center shadow-[0_4px_20px_rgba(0,0,0,0.15)] ${bgImage ? 'bg-white/20 border border-white/50 text-white' : 'bg-white/80 border border-white text-[#0F172A]'}`}
         >
-          <Play className="w-6 h-6 ml-1" fill="currentColor" />
+          <Play className="w-6 h-6 ml-1 drop-shadow-sm" fill="currentColor" />
         </motion.div>
       </div>
 
@@ -107,8 +107,8 @@ export function VideoCard({
           { icon: Share2, val: "Share" }
         ].map((action, idx) => (
           <div key={idx} className="flex flex-col items-center gap-1">
-            <div className={`w-10 h-10 rounded-full backdrop-blur-md flex items-center justify-center shadow-sm transition-colors ${bgImage ? 'bg-black/30 border-white/20 text-white hover:bg-white/40' : 'bg-white/60 border-white/50 text-[#475569] hover:bg-white hover:text-[#3B82F6]'}`}>
-              <action.icon className="w-5 h-5" />
+            <div className={`w-10 h-10 rounded-full backdrop-blur-md flex items-center justify-center shadow-sm transition-colors ${bgImage ? 'bg-white/20 border border-white/40 text-white hover:bg-white/40' : 'bg-white/60 border border-white/50 text-[#475569] hover:bg-white hover:text-[#3B82F6]'}`}>
+              <action.icon className="w-5 h-5 drop-shadow-sm" />
             </div>
             <span className={`text-[9px] font-semibold ${bgImage ? 'text-white drop-shadow-md' : 'text-[#475569]'}`}>{action.val}</span>
           </div>
@@ -118,18 +118,18 @@ export function VideoCard({
       {/* Bottom Info Section (Glassmorphic) */}
       <div className={`absolute inset-x-0 bottom-0 pt-12 pb-4 px-4 z-10 backdrop-blur-[2px] ${bgImage ? 'bg-gradient-to-t from-black/80 via-black/40 to-transparent' : 'bg-gradient-to-t from-white/90 via-white/80 to-transparent'}`}>
         
-        {/* User Info */}
         <div className="flex items-center gap-2 mb-2">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#3B82F6] to-[#60A5FA] p-[2px]">
-            <div className={`w-full h-full rounded-full border-2 flex items-center justify-center overflow-hidden ${bgImage ? 'border-black bg-black' : 'border-white bg-white'}`}>
-              {/* Dummy avatar representation */}
-              <div className="w-full h-full bg-[#E2E8F0] overflow-hidden">
-                 <img src={`https://ui-avatars.com/api/?name=${username}&background=3B82F6&color=fff&size=128`} alt={username} className="w-full h-full object-cover" />
+          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#3B82F6] to-[#60A5FA] p-[2px] shrink-0">
+            <div className={`w-full h-full rounded-full border-[1.5px] flex items-center justify-center overflow-hidden ${bgImage ? 'border-[#0F172A] bg-[#0F172A]' : 'border-white bg-white'}`}>
+              <div className="w-full h-full bg-[#E2E8F0] flex items-center justify-center">
+                 <span className="text-[11px] font-bold text-[#0F172A] uppercase">
+                   {username.charAt(0)}
+                 </span>
               </div>
             </div>
           </div>
-          <span className={`text-sm font-bold ${bgImage ? 'text-white' : 'text-[#0F172A]'}`}>@{username}</span>
-          <div className="px-2 py-0.5 rounded border border-[#3B82F6] text-[#3B82F6] text-[9px] font-bold tracking-wider ml-auto bg-white/10 backdrop-blur-sm">
+          <span className={`text-sm font-bold truncate ${bgImage ? 'text-white drop-shadow-md' : 'text-[#0F172A]'}`}>@{username}</span>
+          <div className="px-2 py-0.5 rounded border border-[#3B82F6] text-[#3B82F6] text-[9px] font-bold tracking-wider ml-auto bg-white/10 backdrop-blur-sm shrink-0">
             FOLLOW
           </div>
         </div>
