@@ -33,13 +33,13 @@ export function Navbar() {
       <header
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[#050505]/80 backdrop-blur-md border-b border-[#151515] py-4"
+            ? "bg-white/80 backdrop-blur-md border-b border-[#E2E8F0] py-4"
             : "bg-transparent py-6"
         }`}
       >
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <span className="font-heading font-bold text-2xl tracking-tighter text-[#ededed]">
+            <span className="font-heading font-bold text-2xl tracking-tighter text-[#0F172A]">
               UMAV
             </span>
           </Link>
@@ -50,7 +50,7 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm text-[#a3a3a3] hover:text-[#ededed] transition-colors"
+                className="text-sm font-medium text-[#475569] hover:text-[#0F172A] transition-colors"
               >
                 {link.name}
               </Link>
@@ -65,7 +65,7 @@ export function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden text-[#ededed] p-2 -mr-2"
+            className="md:hidden text-[#0F172A] p-2 -mr-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X /> : <Menu />}
@@ -80,7 +80,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-[#050505] pt-24 px-6 md:hidden"
+            className="fixed inset-0 z-40 bg-[#FAFAFA] pt-24 px-6 md:hidden"
           >
             <div className="flex flex-col gap-6">
               {navLinks.map((link) => (
@@ -88,7 +88,7 @@ export function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-2xl font-heading text-[#ededed] border-b border-[#151515] pb-4"
+                  className="text-2xl font-heading text-[#0F172A] border-b border-[#E2E8F0] pb-4"
                 >
                   {link.name}
                 </Link>

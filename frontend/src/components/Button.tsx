@@ -4,8 +4,7 @@ import * as React from "react";
 import { motion, HTMLMotionProps } from "framer-motion";
 import Link from "next/link";
 
-export interface ButtonProps
-  extends HTMLMotionProps<"button"> {
+export interface ButtonProps extends HTMLMotionProps<"button"> {
   href?: string;
   variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
@@ -23,13 +22,13 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#00FF66] focus:ring-offset-2 focus:ring-offset-[#050505] disabled:opacity-50 disabled:pointer-events-none";
+    "inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] focus:ring-offset-2 focus:ring-offset-white disabled:opacity-50 disabled:pointer-events-none rounded-md";
 
   const variants = {
-    primary: "bg-[#00FF66] text-[#050505] hover:bg-[#00e65c]",
-    secondary: "bg-[#151515] text-[#ededed] hover:bg-[#202020]",
-    outline: "border border-[#333333] text-[#ededed] hover:bg-[#101010] hover:border-[#444444]",
-    ghost: "text-[#a3a3a3] hover:text-[#ededed] hover:bg-[#101010]",
+    primary: "bg-[#0F172A] text-white hover:bg-[#1E293B] shadow-sm hover:shadow-md",
+    secondary: "bg-[#F1F5F9] text-[#0F172A] hover:bg-[#E2E8F0]",
+    outline: "border border-[#E2E8F0] text-[#0F172A] hover:bg-[#F8FAFC] hover:border-[#CBD5E1]",
+    ghost: "text-[#475569] hover:text-[#0F172A] hover:bg-[#F1F5F9]",
   };
 
   const sizes = {
@@ -44,32 +43,27 @@ export function Button({
     <span className="flex items-center gap-2">
       {children}
       {icon && (
-        <motion.span
-          className="inline-block"
-          whileHover={{ x: variant === "primary" ? 4 : 0, y: variant === "primary" ? -4 : 0 }}
-          transition={{ duration: 0.2 }}
-        >
+        <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
           {icon}
-        </motion.span>
+        </span>
       )}
     </span>
   );
 
   if (href) {
     return (
-      <Link href={href} className={combinedStyles}>
+      <Link href={href} className={`${combinedStyles} group`}>
         {Inner}
       </Link>
     );
   }
 
   return (
-    <motion.button
-      whileTap={{ scale: 0.98 }}
-      className={combinedStyles}
-      {...props}
+    <button
+      className={`${combinedStyles} group`}
+      {...(props as any)}
     >
       {Inner}
-    </motion.button>
+    </button>
   );
 }

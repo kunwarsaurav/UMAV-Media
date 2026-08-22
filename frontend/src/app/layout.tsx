@@ -43,11 +43,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} font-sans bg-[#050505] text-[#ededed] antialiased min-h-screen flex flex-col selection:bg-[#00FF66] selection:text-[#050505] relative`}
+        className={`${spaceGrotesk.variable} ${inter.variable} font-sans bg-[#FAFAFA] text-[#1C1C1C] antialiased min-h-screen flex flex-col selection:bg-[#E2E8F0] selection:text-[#0F172A] relative`}
       >
-        <div className="fixed inset-0 z-0 noise-bg mix-blend-overlay"></div>
         <div className="relative z-10 flex flex-col flex-1">{children}</div>
       </body>
     </html>

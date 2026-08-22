@@ -4,15 +4,20 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
   
-  --color-brand-green: #00FF66;
-  --color-bg-primary: #050505;
-  --color-bg-secondary: #0A0A0A;
-  --color-bg-tertiary: #101010;
-  --color-bg-quaternary: #151515;
+  --color-brand-primary: #1E293B; /* Deep slate */
+  --color-brand-accent: #3B82F6; /* Professional blue */
   
-  --color-text-primary: #ededed;
-  --color-text-secondary: #a3a3a3;
-  --color-text-muted: #525252;
+  --color-bg-primary: #FAFAFA;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-tertiary: #F1F5F9;
+  --color-bg-quaternary: #E2E8F0;
+  
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748B;
+  
+  --color-border-subtle: #E2E8F0;
+  --color-border-strong: #CBD5E1;
 }
 
 @layer base {
@@ -26,16 +31,12 @@
     font-family: var(--font-heading);
     font-weight: 500;
     letter-spacing: -0.02em;
+    color: var(--color-text-primary);
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
-  }
-  .noise-bg {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.04;
-    pointer-events: none;
   }
 }

@@ -13,39 +13,34 @@ export function NetworkVisualization() {
   if (!mounted) return null;
 
   return (
-    <div className="relative w-full h-[500px] flex items-center justify-center">
+    <div className="relative w-full h-[500px] flex items-center justify-center font-sans">
       {/* Central Node */}
       <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1, type: "spring" }}
-        className="absolute z-20 w-32 h-32 rounded-full bg-[#050505] border border-[#00FF66] shadow-[0_0_30px_rgba(0,255,102,0.2)] flex items-center justify-center"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        className="absolute z-20 w-32 h-32 rounded-full bg-white border border-[#E2E8F0] shadow-sm flex items-center justify-center"
       >
-        <span className="font-heading font-bold text-xl text-[#00FF66] tracking-widest">
+        <span className="font-heading font-semibold text-lg text-[#0F172A] tracking-wide">
           UMAV
         </span>
       </motion.div>
 
       {/* Input Nodes (Left side) */}
-      <div className="absolute left-0 md:left-10 flex flex-col gap-12 z-10">
+      <div className="absolute left-0 md:left-10 flex flex-col gap-10 z-10">
         {["PODCAST", "STREAM", "INTERVIEW"].map((label, i) => (
           <motion.div
             key={label}
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
             className="flex items-center gap-4"
           >
-            <div className="w-24 px-3 py-2 border border-[#151515] bg-[#0A0A0A] rounded-lg text-center text-xs font-semibold tracking-widest text-[#a3a3a3]">
+            <div className="w-24 px-3 py-2 bg-white border border-[#E2E8F0] rounded-md shadow-sm text-center text-xs font-semibold tracking-wider text-[#475569]">
               {label}
             </div>
             {/* Connecting Line */}
-            <motion.div 
-              className="h-[1px] bg-gradient-to-r from-[#151515] to-[#333333]"
-              initial={{ width: 0 }}
-              animate={{ width: 100 }}
-              transition={{ duration: 0.8, delay: 0.5 + i * 0.1 }}
-            />
+            <div className="h-[1px] w-12 md:w-24 bg-[#E2E8F0]" />
           </motion.div>
         ))}
       </div>
@@ -55,48 +50,22 @@ export function NetworkVisualization() {
         {[1, 2, 3, 4, 5].map((i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 + i * 0.1 }}
+            transition={{ duration: 0.6, delay: 0.5 + i * 0.1 }}
             className="flex items-center gap-4"
           >
             {/* Connecting Line */}
-            <motion.div 
-              className="h-[1px] bg-gradient-to-l from-[#151515] to-[#00FF66]/50"
-              initial={{ width: 0 }}
-              animate={{ width: 80 + Math.random() * 40 }}
-              transition={{ duration: 0.8, delay: 1 + i * 0.1 }}
-            />
-            <div className="w-8 h-12 border border-[#151515] bg-[#0A0A0A] rounded flex items-center justify-center">
-              <div className="w-1 h-1 rounded-full bg-[#00FF66]/50" />
+            <div className="h-[1px] w-12 md:w-24 bg-[#E2E8F0]" />
+            <div className="w-12 h-16 bg-white border border-[#E2E8F0] rounded-md shadow-sm flex items-center justify-center">
+              <div className="w-4 h-4 rounded-sm bg-[#F1F5F9] border border-[#E2E8F0]" />
             </div>
           </motion.div>
         ))}
       </div>
-
-      {/* Particles/Data flow */}
-      {[...Array(10)].map((_, i) => (
-        <motion.div
-          key={`particle-${i}`}
-          className="absolute w-1 h-1 rounded-full bg-[#00FF66]"
-          initial={{ 
-            opacity: 0,
-            x: -150, 
-            y: (Math.random() - 0.5) * 200 
-          }}
-          animate={{ 
-            opacity: [0, 1, 1, 0],
-            x: 150,
-            y: 0
-          }}
-          transition={{
-            duration: 2 + Math.random() * 2,
-            repeat: Infinity,
-            delay: Math.random() * 5,
-            ease: "easeInOut"
-          }}
-        />
-      ))}
+      
+      {/* Background Grid for architectural feel */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVoNDBWNDBIMHptMzkuNSAwVjBINFY0MHoiIGZpbGw9IiNFMkU4RjAiLz48L3N2Zz4=')] opacity-50 z-0 mask-image:linear-gradient(to_bottom,transparent,black,transparent)]" style={{ maskImage: "radial-gradient(circle, black, transparent 70%)", WebkitMaskImage: "radial-gradient(circle, black, transparent 70%)" }} />
     </div>
   );
 }

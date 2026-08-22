@@ -12,22 +12,22 @@ export default function CreatorsPage() {
     <>
       <Navbar />
       
-      <main className="flex-1 pt-32 pb-20">
+      <main className="flex-1 pt-32 pb-20 bg-white">
         {/* HERO */}
         <section className="py-20 md:py-32">
           <div className="container mx-auto px-6 max-w-7xl">
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="max-w-4xl"
             >
-              <h1 className="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-[1.1] mb-8">
+              <h1 className="text-5xl md:text-7xl font-heading font-semibold tracking-tighter leading-[1.1] mb-8 text-[#0F172A]">
                 TURN YOUR LONG-FORM<br />
                 INTO A CONSTANT<br />
-                <span className="text-[#00FF66]">STREAM OF SHORT-FORM.</span>
+                <span className="text-[#3B82F6]">STREAM OF SHORT-FORM.</span>
               </h1>
-              <p className="text-[#a3a3a3] text-xl md:text-2xl max-w-2xl mb-10 text-balance">
+              <p className="text-[#475569] text-xl md:text-2xl max-w-2xl mb-10 text-balance">
                 Podcasts, streams, interviews, and long-form videos shouldn't just live once. We extract the best moments and distribute them across a network built for scale.
               </p>
               <Button href="/contact" variant="primary" size="lg" icon={<ArrowRight className="w-5 h-5" />}>
@@ -38,9 +38,9 @@ export default function CreatorsPage() {
         </section>
 
         {/* CONTENT TYPES */}
-        <section className="py-20 border-t border-[#151515] bg-[#0A0A0A]">
+        <section className="py-20 border-t border-[#E2E8F0] bg-[#FAFAFA]">
           <div className="container mx-auto px-6 max-w-7xl">
-            <h2 className="text-sm font-bold tracking-widest text-[#a3a3a3] uppercase mb-12">Who It's For</h2>
+            <h2 className="text-sm font-semibold tracking-widest text-[#64748B] uppercase mb-12">Who It's For</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {["Podcasts", "Streams", "Interviews", "YouTube Videos", "Events", "Conversations"].map((type, i) => (
                 <motion.div 
@@ -49,7 +49,7 @@ export default function CreatorsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="border border-[#151515] bg-[#050505] p-6 text-center rounded-xl text-[#ededed] font-medium"
+                  className="border border-[#E2E8F0] bg-white p-6 text-center rounded-xl text-[#0F172A] font-medium shadow-sm"
                 >
                   {type}
                 </motion.div>
@@ -59,11 +59,11 @@ export default function CreatorsPage() {
         </section>
 
         {/* WORKFLOW */}
-        <section className="py-32">
+        <section className="py-32 bg-white border-t border-[#E2E8F0]">
           <div className="container mx-auto px-6 max-w-7xl">
             <div className="flex flex-col lg:flex-row gap-16 items-center">
               <div className="flex-1">
-                <h2 className="text-4xl md:text-5xl font-heading font-medium leading-tight mb-8">
+                <h2 className="text-4xl md:text-5xl font-heading font-semibold leading-tight mb-8 text-[#0F172A]">
                   WE BUILD THE CLIPS.<br />
                   YOU GET THE REACH.
                 </h2>
@@ -75,10 +75,10 @@ export default function CreatorsPage() {
                     { num: "04", title: "We Distribute", desc: "Clips are pushed across multiple channels." },
                   ].map((step) => (
                     <div key={step.num} className="flex gap-6">
-                      <div className="text-[#00FF66] font-heading font-medium mt-1">{step.num}</div>
+                      <div className="text-[#3B82F6] font-heading font-semibold mt-1">{step.num}</div>
                       <div>
-                        <h4 className="text-xl font-heading font-medium text-[#ededed] mb-1">{step.title}</h4>
-                        <p className="text-[#a3a3a3]">{step.desc}</p>
+                        <h4 className="text-xl font-heading font-medium text-[#0F172A] mb-1">{step.title}</h4>
+                        <p className="text-[#475569]">{step.desc}</p>
                       </div>
                     </div>
                   ))}
