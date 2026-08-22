@@ -160,7 +160,7 @@ export default function Home() {
                   caption="This segment on AI and consciousness is mind blowing. #ai #podcast #tech"
                   likes="145K"
                   comments="3.2K"
-                  bgImage="https://images.unsplash.com/photo-1516280440502-37f8e10c60f3?q=80&w=600&auto=format&fit=crop"
+                  bgImage="https://picsum.photos/seed/podcast/600/1000"
                   delay={0.1} 
                 />
                 <div className="mt-8">
@@ -170,7 +170,7 @@ export default function Home() {
                     caption="How MrBeast spends $1M a day. 🤯 #creator #business"
                     likes="89K"
                     comments="1.1K"
-                    bgImage="https://images.unsplash.com/photo-1598550880863-4e8aa3d0153e?q=80&w=600&auto=format&fit=crop"
+                    bgImage="https://picsum.photos/seed/studio/600/1000"
                     delay={0.2} 
                   />
                 </div>
@@ -181,7 +181,7 @@ export default function Home() {
                     caption="The optimal morning routine for dopamine. #health #science #huberman"
                     likes="210K"
                     comments="5.4K"
-                    bgImage="https://images.unsplash.com/photo-1551818255-e6e10975bc17?q=80&w=600&auto=format&fit=crop"
+                    bgImage="https://picsum.photos/seed/stage/600/1000"
                     delay={0.3} 
                   />
                 </div>

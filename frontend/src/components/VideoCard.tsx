@@ -124,7 +124,7 @@ export function VideoCard({
             <div className={`w-full h-full rounded-full border-2 flex items-center justify-center overflow-hidden ${bgImage ? 'border-black bg-black' : 'border-white bg-white'}`}>
               {/* Dummy avatar representation */}
               <div className="w-full h-full bg-[#E2E8F0] overflow-hidden">
-                 <img src={`https://api.dicebear.com/7.x/notionists/svg?seed=${username}`} alt={username} className="w-full h-full object-cover" />
+                 <img src={`https://ui-avatars.com/api/?name=${username}&background=3B82F6&color=fff&size=128`} alt={username} className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
