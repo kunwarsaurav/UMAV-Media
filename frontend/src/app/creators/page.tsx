@@ -85,9 +85,25 @@ export default function CreatorsPage() {
                 </div>
               </div>
               <div className="flex-1 grid grid-cols-2 gap-4 w-full">
-                <VideoCard delay={0.2} />
+                <VideoCard 
+                  platform="tiktok"
+                  username="mydogandme"
+                  caption="Wait for the end... 😭 #dogsoftiktok #funny #pets"
+                  likes="2.1M"
+                  comments="14.3K"
+                  bgImage="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=600&auto=format&fit=crop"
+                  delay={0.2} 
+                />
                 <div className="mt-12">
-                  <VideoCard delay={0.4} />
+                  <VideoCard 
+                    platform="reels"
+                    username="techreviewers"
+                    caption="Unboxing the new setup! What do you guys think? 💻✨ #tech #setup #unboxing"
+                    likes="45K"
+                    comments="892"
+                    bgImage="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop"
+                    delay={0.4} 
+                  />
                 </div>
               </div>
             </div>
