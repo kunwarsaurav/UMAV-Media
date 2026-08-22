@@ -32,17 +32,18 @@ export function NetworkVisualization() {
   const outputY = [15, 32.5, 50, 67.5, 85];
 
   return (
-    <div className="relative w-full h-[500px] md:h-[600px] font-sans overflow-hidden bg-[#FAFAFA] rounded-2xl">
-      {/* Elegant Dot Pattern Background */}
-      <div 
-        className="absolute inset-0 z-0 opacity-40" 
-        style={{
-          backgroundImage: "radial-gradient(#CBD5E1 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-          maskImage: "radial-gradient(circle at center, black 40%, transparent 80%)",
-          WebkitMaskImage: "radial-gradient(circle at center, black 40%, transparent 80%)"
-        }} 
-      />
+    <div className="relative w-full h-[500px] md:h-[600px] font-sans bg-[#FAFAFA] rounded-2xl overflow-x-auto overflow-y-hidden custom-scrollbar">
+      <div className="relative min-w-[700px] w-full h-full">
+        {/* Elegant Dot Pattern Background */}
+        <div 
+          className="absolute inset-0 z-0 opacity-40" 
+          style={{
+            backgroundImage: "radial-gradient(#CBD5E1 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+            maskImage: "radial-gradient(circle at center, black 40%, transparent 80%)",
+            WebkitMaskImage: "radial-gradient(circle at center, black 40%, transparent 80%)"
+          }} 
+        />
       
       {/* Soft glowing ambient light behind center */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-blue-50 rounded-full blur-3xl opacity-60 z-0" />
@@ -145,6 +146,7 @@ export function NetworkVisualization() {
           </div>
         </motion.div>
       ))}
+      </div>
     </div>
   );
 }

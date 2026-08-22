@@ -84,7 +84,7 @@ export default function CreatorsPage() {
                   ))}
                 </div>
               </div>
-              <div className="flex-1 grid grid-cols-2 gap-4 w-full">
+              <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-4 w-full max-w-sm sm:max-w-none mx-auto mt-12 lg:mt-0">
                 <VideoCard 
                   platform="tiktok"
                   username="mydogandme"
@@ -94,7 +94,7 @@ export default function CreatorsPage() {
                   bgImage="https://loremflickr.com/600/1000/dog,pet/all"
                   delay={0.2} 
                 />
-                <div className="mt-12">
+                <div className="mt-0 sm:mt-12">
                   <VideoCard 
                     platform="reels"
                     username="techreviewers"

@@ -153,7 +153,7 @@ export default function Home() {
                   GROW WITH UMAV
                 </Button>
               </div>
-              <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
+              <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-4 w-full max-w-sm sm:max-w-none mx-auto">
                 <VideoCard 
                   platform="tiktok"
                   username="lexfridman"
@@ -163,7 +163,7 @@ export default function Home() {
                   bgImage="https://loremflickr.com/600/1000/podcast,microphone/all"
                   delay={0.1} 
                 />
-                <div className="mt-8">
+                <div className="mt-0 sm:mt-8">
                   <VideoCard 
                     platform="reels"
                     username="colinandsamir"
