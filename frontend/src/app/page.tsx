@@ -207,14 +207,121 @@ export default function Home() {
                 </Button>
               </div>
               <div className="flex-1 relative w-full aspect-square md:aspect-[4/3] border border-[#E2E8F0] bg-[#FAFAFA] rounded-2xl shadow-sm overflow-hidden flex items-center justify-center">
+                
+                {/* Elegant Dot Pattern */}
+                <div 
+                  className="absolute inset-0 z-0 opacity-40" 
+                  style={{
+                    backgroundImage: "radial-gradient(#CBD5E1 1px, transparent 1px)",
+                    backgroundSize: "24px 24px",
+                  }} 
+                />
+                
+                {/* Dashboard Card */}
                 <motion.div 
-                  initial={{ scale: 0.95, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
-                  className="relative z-10 w-2/3 h-2/3 border border-[#CBD5E1] bg-white rounded-xl shadow-sm flex items-center justify-center overflow-hidden"
+                  transition={{ duration: 0.6 }}
+                  className="relative z-10 w-[90%] md:w-[85%] bg-white rounded-2xl shadow-[0_20px_40px_rgb(0,0,0,0.06)] border border-[#E2E8F0] overflow-hidden"
                 >
-                  <span className="relative z-10 font-heading font-medium tracking-widest text-[#64748B]">BRAND CAMPAIGN</span>
+                  {/* Card Header */}
+                  <div className="px-5 py-4 md:px-6 md:py-5 border-b border-[#E2E8F0] flex justify-between items-center bg-[#F8FAFC]">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0F172A] to-[#334155] flex items-center justify-center shadow-sm">
+                         <span className="text-white font-bold text-xs uppercase">B</span>
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-[#0F172A]">BRAND CAMPAIGN</div>
+                        <div className="text-[9px] md:text-[10px] text-[#64748B]">Active • Q3 Distribution</div>
+                      </div>
+                    </div>
+                    <div className="px-2 py-1 md:px-3 bg-green-50 border border-green-200 text-green-700 text-[8px] md:text-[9px] font-bold tracking-wider rounded-full">
+                      PERFORMING
+                    </div>
+                  </div>
+
+                  {/* Metrics */}
+                  <div className="p-5 md:p-6">
+                    <div className="text-xs md:text-sm font-semibold text-[#64748B] mb-1">Total Network Reach</div>
+                    <div className="text-3xl md:text-4xl font-heading font-bold text-[#0F172A] mb-4 tracking-tight">14.2M</div>
+                    
+                    {/* Animated Line Chart SVG */}
+                    <div className="w-full h-20 md:h-24 relative mt-4 md:mt-6 border-b border-dashed border-[#E2E8F0]">
+                       <svg className="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 100">
+                         <defs>
+                           <linearGradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+                             <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.2" />
+                             <stop offset="100%" stopColor="#3B82F6" stopOpacity="0" />
+                           </linearGradient>
+                         </defs>
+                         {/* Fill */}
+                         <motion.path 
+                           d="M0,100 L0,80 Q20,60 40,70 T80,30 T100,10 L100,100 Z"
+                           fill="url(#chartGradient)"
+                           initial={{ opacity: 0 }}
+                           whileInView={{ opacity: 1 }}
+                           transition={{ duration: 1, delay: 0.2 }}
+                         />
+                         {/* Line */}
+                         <motion.path 
+                           d="M0,80 Q20,60 40,70 T80,30 T100,10"
+                           fill="none"
+                           stroke="#3B82F6"
+                           strokeWidth="3"
+                           initial={{ pathLength: 0 }}
+                           whileInView={{ pathLength: 1 }}
+                           transition={{ duration: 1.5, ease: "easeOut" }}
+                         />
+                         {/* End Point */}
+                         <motion.circle 
+                           cx="100" cy="10" r="4" 
+                           fill="#fff" stroke="#3B82F6" strokeWidth="2"
+                           initial={{ scale: 0 }}
+                           whileInView={{ scale: 1 }}
+                           transition={{ duration: 0.3, delay: 1.5 }}
+                         />
+                       </svg>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-2 md:gap-4 mt-6">
+                      <div>
+                        <div className="text-[9px] md:text-[10px] text-[#64748B] font-semibold uppercase">Clips</div>
+                        <div className="text-base md:text-lg font-bold text-[#0F172A]">240</div>
+                      </div>
+                      <div>
+                        <div className="text-[9px] md:text-[10px] text-[#64748B] font-semibold uppercase">Engagement</div>
+                        <div className="text-base md:text-lg font-bold text-[#0F172A]">8.4%</div>
+                      </div>
+                      <div>
+                        <div className="text-[9px] md:text-[10px] text-[#64748B] font-semibold uppercase">Conversion</div>
+                        <div className="text-base md:text-lg font-bold text-[#3B82F6]">+12%</div>
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
+
+                {/* Floating Elements */}
+                <motion.div 
+                  initial={{ x: 20, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.8 }}
+                  className="absolute right-2 md:right-4 top-1/4 px-3 py-1.5 md:px-4 md:py-2 bg-white/80 backdrop-blur-md rounded-xl border border-[#E2E8F0] shadow-sm flex items-center gap-2 z-20"
+                >
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#3B82F6] animate-pulse" />
+                  <span className="text-[9px] md:text-[10px] font-bold text-[#0F172A] tracking-wider">TIKTOK SYNC</span>
+                </motion.div>
+                
+                <motion.div 
+                  initial={{ x: -20, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 1.0 }}
+                  className="absolute left-2 md:left-4 bottom-1/4 px-3 py-1.5 md:px-4 md:py-2 bg-white/80 backdrop-blur-md rounded-xl border border-[#E2E8F0] shadow-sm flex items-center gap-2 z-20"
+                >
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-purple-500 animate-pulse" />
+                  <span className="text-[9px] md:text-[10px] font-bold text-[#0F172A] tracking-wider">REELS SYNC</span>
+                </motion.div>
+
               </div>
             </div>
           </div>
