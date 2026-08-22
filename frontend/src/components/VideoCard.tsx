@@ -115,8 +115,8 @@ export function VideoCard({
         ))}
       </div>
 
-      {/* Bottom Info Section (Glassmorphic) */}
-      <div className={`absolute inset-x-0 bottom-0 pt-12 pb-4 px-4 z-10 backdrop-blur-[2px] ${bgImage ? 'bg-gradient-to-t from-black/80 via-black/40 to-transparent' : 'bg-gradient-to-t from-white/90 via-white/80 to-transparent'}`}>
+      {/* Bottom Info Section (Dark Gradient Overlay) */}
+      <div className={`absolute inset-x-0 bottom-0 pt-20 pb-4 px-4 z-10 pointer-events-none ${bgImage ? 'bg-gradient-to-t from-black/90 via-black/40 to-transparent' : 'bg-gradient-to-t from-white/95 via-white/80 to-transparent'}`}>
         
         <div className="flex items-center gap-2 mb-2">
           <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#3B82F6] to-[#60A5FA] p-[2px] shrink-0">
