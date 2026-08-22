@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X, Play } from "lucide-react";
 import { Button } from "./Button";
 
 export function Navbar() {
@@ -33,13 +33,16 @@ export function Navbar() {
       <header
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/80 backdrop-blur-md border-b border-[#E2E8F0] py-4"
+            ? "bg-white/80 backdrop-blur-md border-b border-[#E2E8F0] py-4 shadow-sm"
             : "bg-transparent py-6"
         }`}
       >
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
-          <Link href="/" className="flex items-center">
-            <span className="font-heading font-bold text-2xl tracking-tighter text-[#0F172A]">
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#3B82F6] to-[#1E3A8A] flex items-center justify-center shadow-[0_2px_10px_rgba(59,130,246,0.3)] group-hover:shadow-[0_4px_15px_rgba(59,130,246,0.4)] transition-all duration-300 group-hover:scale-105">
+              <Play className="w-3.5 h-3.5 text-white fill-white ml-0.5" />
+            </div>
+            <span className="font-heading font-bold text-2xl tracking-tighter text-[#0F172A] group-hover:text-[#3B82F6] transition-colors">
               UMAV
             </span>
           </Link>
