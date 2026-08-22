@@ -20,8 +20,10 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
+    { name: "Work", href: "/#work" },
     { name: "Creators", href: "/creators" },
     { name: "Brands", href: "/brands" },
+    { name: "Network", href: "/#network" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];

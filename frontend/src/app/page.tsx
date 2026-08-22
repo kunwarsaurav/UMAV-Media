@@ -13,14 +13,14 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      
+
       <main className="flex-1">
         {/* HERO SECTION */}
-        <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+        <section id="network" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
           <div className="container mx-auto px-6 max-w-7xl relative z-10">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="flex-1 w-full">
-                <motion.h1 
+                <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}
@@ -30,7 +30,7 @@ export default function Home() {
                   <span className="text-[#00FF66]">ATTENTION</span><br />
                   INTO REACH.
                 </motion.h1>
-                <motion.p 
+                <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -38,7 +38,7 @@ export default function Home() {
                 >
                   We turn long-form content into short-form media and distribute it across a network built for scale.
                 </motion.p>
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
@@ -63,7 +63,7 @@ export default function Home() {
         <section id="explore" className="py-32 border-t border-[#151515]">
           <div className="container mx-auto px-6 max-w-7xl">
             <div className="max-w-4xl mx-auto text-center">
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -99,9 +99,9 @@ export default function Home() {
         </section>
 
         {/* WHAT WE DO */}
-        <section className="py-32 border-t border-[#151515]">
+        <section id="work" className="py-32 border-t border-[#151515]">
           <div className="container mx-auto px-6 max-w-7xl">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -110,7 +110,7 @@ export default function Home() {
               FROM CONTENT<br />
               TO DISTRIBUTION.
             </motion.h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-x-20 md:gap-y-16">
               {[
                 { num: "01", title: "CLIP", desc: "Find the moments worth watching." },
@@ -118,7 +118,7 @@ export default function Home() {
                 { num: "03", title: "DISTRIBUTE", desc: "Move content across a network of channels and platforms." },
                 { num: "04", title: "MEASURE", desc: "Understand what earns attention and what performs." }
               ].map((feature, i) => (
-                <motion.div 
+                <motion.div
                   key={feature.num}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -184,7 +184,7 @@ export default function Home() {
               </div>
               <div className="flex-1 relative w-full aspect-square md:aspect-[4/3] border border-[#151515] bg-[#0A0A0A] rounded-3xl overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 noise-bg" />
-                <motion.div 
+                <motion.div
                   initial={{ scale: 0.9, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
@@ -201,7 +201,7 @@ export default function Home() {
         {/* WHY UMAV */}
         <section className="py-32 border-t border-[#151515] bg-[#00FF66] text-[#050505]">
           <div className="container mx-auto px-6 max-w-7xl text-center">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -210,7 +210,7 @@ export default function Home() {
               WE DON'T THINK LIKE<br />
               AN EDITING AGENCY.
             </motion.h2>
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -237,8 +237,8 @@ export default function Home() {
               <Button href="/contact" variant="primary" size="lg" icon={<ArrowRight className="w-5 h-5" />}>
                 START A CAMPAIGN
               </Button>
-              <a href="mailto:hello@umavmedia.com" className="text-[#a3a3a3] hover:text-[#ededed] transition-colors border-b border-transparent hover:border-[#ededed]">
-                hello@umavmedia.com
+              <a href="mailto:info@umavmedia.com" className="text-[#a3a3a3] hover:text-[#ededed] transition-colors border-b border-transparent hover:border-[#ededed]">
+                info@umavmedia.com
               </a>
             </div>
           </div>
