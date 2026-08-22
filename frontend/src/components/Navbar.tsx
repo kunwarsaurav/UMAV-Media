@@ -38,11 +38,14 @@ export function Navbar() {
         }`}
       >
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#3B82F6] to-[#1E3A8A] flex items-center justify-center shadow-[0_2px_10px_rgba(59,130,246,0.3)] group-hover:shadow-[0_4px_15px_rgba(59,130,246,0.4)] transition-all duration-300 group-hover:scale-105">
-              <Play className="w-3.5 h-3.5 text-white fill-white ml-0.5" />
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative flex items-center justify-center w-8 h-8">
+              <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-500 group-hover:-rotate-90">
+                <rect x="3" y="3" width="12" height="12" rx="2.5" stroke="#0F172A" strokeWidth="2.5" />
+                <rect x="9" y="9" width="12" height="12" rx="2.5" stroke="#3B82F6" strokeWidth="2.5" />
+              </svg>
             </div>
-            <span className="font-heading font-bold text-2xl tracking-tighter text-[#0F172A] group-hover:text-[#3B82F6] transition-colors">
+            <span className="font-heading font-bold text-xl md:text-2xl tracking-[0.2em] text-[#0F172A] uppercase mt-0.5">
               UMAV
             </span>
           </Link>
