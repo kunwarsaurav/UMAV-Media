@@ -53,86 +53,72 @@ export default function BrandsPage() {
               
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-3xl opacity-60 z-0" />
 
-              {/* Animated SVG Lines */}
-              <svg className="absolute inset-0 w-full h-full z-10 pointer-events-none">
-                <defs>
-                  <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#94A3B8" stopOpacity="0.3" />
-                    <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.8" />
-                    <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.3" />
-                  </linearGradient>
-                </defs>
-                
-                {/* Desktop Lines */}
-                <motion.path
-                  className="hidden md:block"
-                  d="M 30% 50% L 45% 50%"
-                  fill="none"
-                  stroke="url(#flowGradient)"
-                  strokeWidth="2"
-                  strokeDasharray="6 6"
-                  initial={{ strokeDashoffset: 24 }}
-                  animate={{ strokeDashoffset: 0 }}
-                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                />
-                
-                <motion.path
-                  className="hidden md:block"
-                  d="M 55% 50% C 65% 50%, 65% 35%, 75% 35%"
-                  fill="none"
-                  stroke="url(#flowGradient)"
-                  strokeWidth="2"
-                  strokeDasharray="6 6"
-                  initial={{ strokeDashoffset: 24 }}
-                  animate={{ strokeDashoffset: 0 }}
-                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                />
-                <motion.path
-                  className="hidden md:block"
-                  d="M 55% 50% L 75% 50%"
-                  fill="none"
-                  stroke="url(#flowGradient)"
-                  strokeWidth="2"
-                  strokeDasharray="6 6"
-                  initial={{ strokeDashoffset: 24 }}
-                  animate={{ strokeDashoffset: 0 }}
-                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                />
-                <motion.path
-                  className="hidden md:block"
-                  d="M 55% 50% C 65% 50%, 65% 65%, 75% 65%"
-                  fill="none"
-                  stroke="url(#flowGradient)"
-                  strokeWidth="2"
-                  strokeDasharray="6 6"
-                  initial={{ strokeDashoffset: 24 }}
-                  animate={{ strokeDashoffset: 0 }}
-                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                />
-              </svg>
-
               <div className="absolute inset-0 flex items-center justify-center z-20">
-                <div className="flex flex-col md:flex-row gap-8 md:gap-0 items-center justify-between w-full max-w-4xl px-8 md:px-0">
+                <div className="flex flex-col md:flex-row items-center justify-center w-full px-4 md:px-0">
                   
                   {/* Brand Node */}
-                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border border-[#E2E8F0] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] flex flex-col items-center justify-center md:ml-12 relative">
+                  <div className="w-24 h-24 md:w-32 md:h-32 shrink-0 rounded-full border border-[#E2E8F0] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] flex flex-col items-center justify-center relative z-20">
                     <div className="absolute inset-2 rounded-full border border-gray-50 opacity-50" />
                     <Building2 className="w-6 h-6 text-[#94A3B8] mb-2" />
-                    <span className="text-xs md:text-sm font-semibold tracking-wider text-[#0F172A]">BRAND</span>
+                    <span className="text-[10px] md:text-xs font-semibold tracking-wider text-[#0F172A]">BRAND</span>
+                  </div>
+
+                  {/* Connecting Line 1 */}
+                  <div className="w-[2px] h-12 md:w-24 md:h-[2px] overflow-hidden flex justify-center items-center -my-2 md:-mx-2 z-10">
+                    <svg width="100%" height="100%" className="md:w-[100px] md:h-[20px]">
+                      <motion.line 
+                        x1="0" y1="50%" x2="100%" y2="50%" 
+                        stroke="#94A3B8" strokeWidth="2" strokeDasharray="6 6"
+                        initial={{ strokeDashoffset: 24 }}
+                        animate={{ strokeDashoffset: 0 }}
+                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                        className="hidden md:block"
+                      />
+                      <motion.line 
+                        x1="50%" y1="0" x2="50%" y2="100%" 
+                        stroke="#94A3B8" strokeWidth="2" strokeDasharray="6 6"
+                        initial={{ strokeDashoffset: 24 }}
+                        animate={{ strokeDashoffset: 0 }}
+                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                        className="block md:hidden"
+                      />
+                    </svg>
                   </div>
 
                   {/* UMAV Node */}
-                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl border-2 border-[#3B82F6] bg-white shadow-[0_8px_30px_rgba(59,130,246,0.15)] flex items-center justify-center relative">
+                  <div className="w-24 h-24 md:w-32 md:h-32 shrink-0 rounded-2xl border-2 border-[#3B82F6] bg-white shadow-[0_8px_30px_rgba(59,130,246,0.15)] flex items-center justify-center relative z-20">
                     <div className="absolute inset-1 rounded-xl border border-blue-50 opacity-50" />
                     <span className="font-heading text-xl md:text-2xl font-bold tracking-wide text-[#3B82F6]">UMAV</span>
                   </div>
 
+                  {/* Connecting Line 2 (Forking logic visual fake) */}
+                  <div className="w-[2px] h-12 md:w-24 md:h-[2px] overflow-hidden flex justify-center items-center -my-2 md:-mx-2 z-10">
+                    <svg width="100%" height="100%" className="md:w-[100px] md:h-[20px]">
+                      <motion.line 
+                        x1="0" y1="50%" x2="100%" y2="50%" 
+                        stroke="#3B82F6" strokeWidth="2" strokeDasharray="6 6"
+                        initial={{ strokeDashoffset: 24 }}
+                        animate={{ strokeDashoffset: 0 }}
+                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                        className="hidden md:block"
+                      />
+                      <motion.line 
+                        x1="50%" y1="0" x2="50%" y2="100%" 
+                        stroke="#3B82F6" strokeWidth="2" strokeDasharray="6 6"
+                        initial={{ strokeDashoffset: 24 }}
+                        animate={{ strokeDashoffset: 0 }}
+                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                        className="block md:hidden"
+                      />
+                    </svg>
+                  </div>
+
                   {/* Output Nodes */}
-                  <div className="flex flex-row md:flex-col gap-4 md:mr-12">
+                  <div className="flex flex-row md:flex-col gap-3 md:gap-4 z-20">
                     {["TIKTOK", "REELS", "SHORTS"].map((platform) => (
-                      <div key={platform} className="flex items-center gap-3 px-4 py-3 bg-white border border-[#E2E8F0] rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] w-[100px] md:w-[140px]">
+                      <div key={platform} className="flex items-center gap-3 px-3 py-2 md:px-4 md:py-3 bg-white border border-[#E2E8F0] rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] w-[90px] md:w-[130px]">
                         <Smartphone className="hidden md:block w-4 h-4 text-[#94A3B8]" />
-                        <span className="text-[10px] md:text-xs font-semibold tracking-wider text-[#475569]">{platform}</span>
+                        <span className="text-[9px] md:text-xs font-semibold tracking-wider text-[#475569]">{platform}</span>
                       </div>
                     ))}
                   </div>
