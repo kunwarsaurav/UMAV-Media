@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Play } from "lucide-react";
 
 export function Footer() {
   return (
@@ -6,8 +7,11 @@ export function Footer() {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-20">
           <div className="md:col-span-2">
-            <Link href="/" className="inline-block mb-6">
-              <span className="font-heading font-bold text-3xl tracking-tighter text-[#0F172A]">
+            <Link href="/" className="inline-flex items-center gap-2.5 group mb-6">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#3B82F6] to-[#1E3A8A] flex items-center justify-center shadow-[0_2px_10px_rgba(59,130,246,0.3)] group-hover:shadow-[0_4px_15px_rgba(59,130,246,0.4)] transition-all duration-300 group-hover:scale-105">
+                <Play className="w-3.5 h-3.5 text-white fill-white ml-0.5" />
+              </div>
+              <span className="font-heading font-bold text-3xl tracking-tighter text-[#0F172A] group-hover:text-[#3B82F6] transition-colors">
                 UMAV
               </span>
             </Link>
