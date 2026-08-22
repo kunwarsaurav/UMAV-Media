@@ -91,7 +91,7 @@ export default function CreatorsPage() {
                   caption="Wait for the end... 😭 #dogsoftiktok #funny #pets"
                   likes="2.1M"
                   comments="14.3K"
-                  bgImage="https://picsum.photos/seed/pets/600/1000"
+                  bgImage="https://loremflickr.com/600/1000/dog,pet/all"
                   delay={0.2} 
                 />
                 <div className="mt-12">
@@ -101,7 +101,7 @@ export default function CreatorsPage() {
                     caption="Unboxing the new setup! What do you guys think? 💻✨ #tech #setup #unboxing"
                     likes="45K"
                     comments="892"
-                    bgImage="https://picsum.photos/seed/desk/600/1000"
+                    bgImage="https://loremflickr.com/600/1000/desk,laptop/all"
                     delay={0.4} 
                   />
                 </div>
