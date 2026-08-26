@@ -22,13 +22,13 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] focus:ring-offset-2 focus:ring-offset-white disabled:opacity-50 disabled:pointer-events-none rounded-md";
+    "inline-flex items-center justify-center font-semibold tracking-wider text-xs uppercase transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 focus:ring-offset-bg-primary disabled:opacity-50 disabled:pointer-events-none rounded-xl";
 
   const variants = {
-    primary: "bg-[#0F172A] text-white hover:bg-[#1E293B] shadow-sm hover:shadow-md",
-    secondary: "bg-[#F1F5F9] text-[#0F172A] hover:bg-[#E2E8F0]",
-    outline: "border border-[#E2E8F0] text-[#0F172A] hover:bg-[#F8FAFC] hover:border-[#CBD5E1]",
-    ghost: "text-[#475569] hover:text-[#0F172A] hover:bg-[#F1F5F9]",
+    primary: "bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_35px_rgba(139,92,246,0.55)] hover:brightness-110",
+    secondary: "bg-brand-accent/10 border border-brand-accent/20 text-brand-accent hover:bg-brand-accent/20 hover:shadow-[0_0_25px_rgba(6,182,212,0.3)]",
+    outline: "border border-brand-primary/35 text-text-primary hover:bg-brand-primary/10 hover:border-brand-primary/60 backdrop-blur-sm",
+    ghost: "text-text-secondary hover:text-brand-primary hover:bg-brand-primary/5",
   };
 
   const sizes = {
