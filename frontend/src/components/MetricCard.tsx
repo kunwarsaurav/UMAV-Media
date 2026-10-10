@@ -11,16 +11,16 @@ interface MetricCardProps {
 export function MetricCard({ value, label, delay = 0 }: MetricCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      className="flex flex-col border border-[#E2E8F0] bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+      transition={{ duration: 0.6, delay }}
+      className="glow-card p-8 rounded-2xl flex flex-col items-center text-center justify-center"
     >
-      <h3 className="text-4xl md:text-5xl font-heading font-semibold tracking-tight text-[#0F172A] mb-2">
+      <h3 className="text-4xl md:text-5xl font-heading font-black bg-gradient-to-r from-brand-accent via-brand-secondary to-brand-primary bg-clip-text text-transparent mb-3 drop-shadow-[0_2px_10px_rgba(6,182,212,0.15)]">
         {value}
       </h3>
-      <p className="text-[#64748B] uppercase tracking-wider text-xs font-medium">
+      <p className="text-text-secondary uppercase tracking-widest text-xs font-semibold">
         {label}
       </p>
     </motion.div>

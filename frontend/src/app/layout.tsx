@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} font-sans bg-[#FAFAFA] text-[#1C1C1C] antialiased min-h-screen flex flex-col selection:bg-[#E2E8F0] selection:text-[#0F172A] relative`}
+        className={`${spaceGrotesk.variable} ${inter.variable} font-sans bg-bg-primary text-text-primary antialiased min-h-screen flex flex-col selection:bg-brand-primary/20 selection:text-text-primary relative`}
       >
         <div className="relative z-10 flex flex-col flex-1">{children}</div>
       </body>

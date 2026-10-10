@@ -4,20 +4,23 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
   
-  --color-brand-primary: #1E293B; /* Deep slate */
-  --color-brand-accent: #3B82F6; /* Professional blue */
+  --color-brand-primary: #8B5CF6; /* Cyber Neon Violet */
+  --color-brand-secondary: #C084FC; /* Light Purple Accent */
+  --color-brand-accent: #06B6D4; /* Neon Cyan */
+  --color-brand-pink: #EC4899; /* Hot Pink */
   
-  --color-bg-primary: #FAFAFA;
-  --color-bg-secondary: #FFFFFF;
-  --color-bg-tertiary: #F1F5F9;
-  --color-bg-quaternary: #E2E8F0;
+  --color-bg-primary: #07050F; /* Deep obsidian space */
+  --color-bg-secondary: #0F0C21; /* Dark control card */
+  --color-bg-tertiary: #191433; /* Hover card element */
+  --color-bg-glow: rgba(139, 92, 246, 0.04);
   
-  --color-text-primary: #0F172A;
-  --color-text-secondary: #475569;
-  --color-text-muted: #64748B;
+  --color-text-primary: #F8FAFC; /* Slate 50 */
+  --color-text-secondary: #CBD5E1; /* Slate 300 */
+  --color-text-muted: #64748B; /* Slate 500 */
   
-  --color-border-subtle: #E2E8F0;
-  --color-border-strong: #CBD5E1;
+  --color-border-subtle: rgba(139, 92, 246, 0.12);
+  --color-border-strong: rgba(139, 92, 246, 0.28);
+  --color-border-cyan: rgba(6, 182, 212, 0.2);
 }
 
 @layer base {
@@ -25,6 +28,8 @@
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
     font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -33,10 +38,103 @@
     letter-spacing: -0.02em;
     color: var(--color-text-primary);
   }
+
+  /* Custom Neon Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #07050F;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.25);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.5);
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .glow-card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(15, 12, 33, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .glow-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(6, 182, 212, 0.1), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .glow-card:hover {
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .glow-card-cyan {
+    position: relative;
+    overflow: hidden;
+    background: rgba(15, 12, 33, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(6, 182, 212, 0.15);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glow-card-cyan::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.3), rgba(139, 92, 246, 0.1), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .glow-card-cyan:hover {
+    border-color: rgba(6, 182, 212, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+  }
+
+  /* Cyber Grid Dot Pattern */
+  .bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+  }
+
+  .grid-glow-mask {
+    mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
   }
 }
